@@ -1,16 +1,20 @@
 package day39_Recap.cydeoTask;
 
-public class Employee {
+public class Employee extends Person {
 
     private int employeeId;
     private String jobTitle;
     private double salary;
 
-    public Employee(int employeeId, String jobTitle, double salary) {
-        this.employeeId = employeeId;
-        this.jobTitle = jobTitle;
-        this.salary = salary;
+    public Employee(String name, int age, char gender, int employeeId, String jobTitle, double salary) {
+        super(name, age, gender);
+        setEmployeeId(employeeId);
+        setJobTitle(jobTitle);
+        setSalary(salary);
     }
+
+
+
     //new Employee("Layan", -1000)
 
     public int getEmployeeId() {
@@ -38,5 +42,18 @@ public class Employee {
     }
     public void work(){
         System.out.println();
+        System.out.println(getName() +" is working");
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + getName()+ '\'' +
+                ", age=" + getAge()+
+                ", gender=" + getGender() +
+                "employeeId=" + employeeId +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
